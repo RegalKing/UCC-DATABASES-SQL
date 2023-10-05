@@ -5,25 +5,51 @@ Professor [Kieran Herley](https://www.ucc.ie/en/compsci/people/herleydrkieran/)
 
 All the code is in SQL using the SQLite database system.
 
-Every program can be run by installing the SQLite Visual Studio Code extension and then right-clicking on the SQL query and clicking "Run Query". Make sure you connect the database file to the SQL file before attempting to run the query.
+Every program can be run by installing the SQLite Visual Studio Code extension and then right-clicking on the SQL query and clicking "Run Query". Make sure you connect the database file (.sqlite) to the SQL file (.sql) before attempting to run the query.
 
 <!-- GETTING STARTED -->
 ## Introduction to Relational Databases - Progress tracker
 
 ```sh
-OOP in Python (Objects and Classes) - Week 1 [L.E.]
+SQL Basics - Week 1 [L.E.]
 ```
-## 1. Simple High-card Guessing  Game
-Design, implement and test a simple high card guessing game (a very basic first step towards an implementation of Poker). A user and the system are both dealt 5 cards (call a 'hand' of cards). The user sees all 5 cards in their hand. The user must predict whether or not they have the highest card - if they are right, then they win, and if they are wrong, they lose.
-- [x] 1-A)Design and implement a Hand class, which should maintain a list of cards. The Hand class should have a method to add a given card to the hand,  to return the highest card (but not removing it from the list), and to represent itself as a string showing every card in the list.
-- [x] 1-B) Design and implement a Deck class, that will start with all 52 standard playing cards. There should be methods to shuffle the deck (you will need to import the random library), and to deal the top card (and remove it from the deck). Write some test routines for the Deck class.
-- [x] 1-C) Design an implement a function to play the game. You will need to create 1 Deck object, which will in turn require 52 Card objects, and 2 Hand objects. The game should initialise the deck, shuffle it, and then deal 5 cards and and them to the user's hand, then deal 5 cards and add them to the system's hand, then show the user's hand to the user, ask the user to predict whether or not they have the highest card, read the input, compute the result, and display  it. Test your game, and make sure it is working properly.
-## 2. Play Your Cards Right
-Design, implement and test the version of Play Your Cards Right, listed as an Exercise in the lecture slides.  A player sees a line of hidden cards, with one card face-up at the start. The player must predict whether the next card is higher or lower than the previous face-up card. If they get it wrong, they lose; if they get it right, they move on to the next card. If they predict all cards correctly, they win.
-- [x] 2-A) Design and implement the Board class, which should maintain the face-down cards, the current face up card, and the history of previous face-up cards. The 'cards' should be object instances of the Card class. The Board class should specify methods to add a card to the hidden cards (so that we can create the initial list - this could be done with an __init__() method instead), to reveal the next card in the list. Write a method or some function calls that test the Board class, so that you can be sure your implementation works.
-- [x] 2-B) Design an implement a function to play the game. You will need to create 1 Deck object (as above), and 1 Board object. You initialise the board by taking some cards from the deck and moving them into the board, and then the game processes the cards on the board, while asking the user for input. Test you game, and make sure it is working properly.
-- [x] 2-C) Adapt the game to allow the user to pass up to 2 times - that is, decline to make a guess, and move on to the next card.
-- [ ] 2-D) Adapt the game to allow 2 players (using the same terminal). Each player has their own board. Each player plays in turn, where a turn consists of a least one guess (and maybe more), and finishes when the player passes, or guess incorrectly, or successfully guess their last card. The winner is the first player to guess their last card successfully. If neither player guess their last card successfully, it is a draw.
+## 1. Complete the following SQL queries
+The database structure:<br>
+<b>Table name:</b> students<br>
+<b>Columns:</b> id_number | first_name | last_name | date_of_birth | hometown | course | points
+
+- [x] 1. List all the students in the table; include all the columns in the result.
+- [x] 2. List the names (first name, followed by last name) of all the students in the table.
+- [x] 3. List the names of all the students in the table; list these in increasing order of their
+points (lowest first, highest last).
+- [x] 4. List the names of all the students in the table; list them in decreasing order of their
+dates of birth (oldest first, youngest last).
+- [x] 5. List all the distinct home-towns that appear in the table; note that each town should
+appear only once however often it features in the table.
+- [x] 6. List the names of all students with at least 450 points.
+- [x] 7. List the names of all students with exactly 525 points.
+- [x] 8. List the names of all students who do not have exactly 525 points.
+- [x] 9. List the names of all students with between 400 and 500 points.
+- [x] 10. List the names of all the students who come from Cork.
+- [x] 11. List the names of all the students born on or before 1 January 1994.
+- [x] 12. List the names of all the students who were less than 20 years old on 1 October 2012.
+- [x] 13. List the names of all the students born on 25 December 1994.
+- [x] 14. List the details of all the students named Ciara.
+- [x] 15. List the details of all the students named ciara.
+- [x] 16. List the details of all the students whose surname or first name is Barry.
+- [x] 17. List the details of all the students named O’Kelly.
+- [x] 18. List the names of all the students born in 1994.
+- [x] 19. List the names and home-towns of all female students.
+- [x] 20. List the details of all students enrolled in either ck401 or ck402.
+- [x] 21. List the details of all students that have at least 450 points and are from Cork.
+- [x] 22. List the details of all students that have at least 450 points and are not from Cork.
+- [x] 23. List the details of all students whose last name precedes Cuddihy alphabetically.
+- [x] 24. List the details of all students whose name precedes Harry Callaghan alphabetically
+(under the convention that names are ordered by last name and then by first name).
+- [x] 25. List the details of all the students whose surname begins with the letter ‘H’.
+- [x] 26. List names and points of all students with at least 450 points; arrange the result in
+decreasing order by first name; label the columns of the result using Surname (for last
+name), Given Name(s) (for other name(s)) and CAO Points (for points).
  ```sh
  Control Constructs II - Week 2 
  ```
