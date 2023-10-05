@@ -1,19 +1,14 @@
-# UCC-ALGORITHMS-DATASTRUCTURES-1
-This repository is related to the "Algorithms and Data Structures I - CS2515" course at [University College Cork in Cork, Ireland.](https://www.ucc.ie/en)
+# UCC-DATABASES-SQL
+This repository is related to the "Introduction to Relational Databases - CS1106" course at [University College Cork in Cork, Ireland.](https://www.ucc.ie/en)
 
-Professor [Kenneth Brown](https://www.ucc.ie/en/misl/people/kbrown/)
+Professor [Kieran Herley](https://www.ucc.ie/en/compsci/people/herleydrkieran/)
 
-All the code is in Python.
+All the code is in SQL using the SQLite database system.
 
-Every program can be run with the following command assuming Python is installed on the system::
-```python
-py FileName.py
-```
-
-[L.E.] -> Laboratory Exercises
+Every program can be run by installing the SQLite Visual Studio Code extension and then right-clicking on the SQL query and clicking "Run Query". Make sure you connect the database file to the SQL file before attempting to run the query.
 
 <!-- GETTING STARTED -->
-## Algorithms and Data Structures I - Progress tracker
+## Introduction to Relational Databases - Progress tracker
 
 ```sh
 OOP in Python (Objects and Classes) - Week 1 [L.E.]
