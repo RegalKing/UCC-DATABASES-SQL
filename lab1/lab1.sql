@@ -110,5 +110,19 @@
 
 -- SELECT *
 -- FROM students
--- WHERE last_name<'Callaghan' AND first_name<'Harry';
--- 23. TASK
+-- WHERE last_name < 'Callaghan'
+-- OR (last_name = 'Callaghan' AND first_name < 'Harry');
+-- 24. TASK
+
+-- SELECT *
+-- FROM students
+-- WHERE last_name LIKE 'H%';
+-- 25. TASK
+
+-- SELECT last_name AS 'Surname',
+-- first_name AS 'Given name(s)',
+-- points AS 'CAO Points'
+-- FROM students
+-- WHERE points>=450
+-- ORDER BY first_name DESC;
+-- 26. TASK
