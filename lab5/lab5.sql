@@ -1,176 +1,148 @@
--- SELECT *
--- FROM persons
--- WHERE first_name LIKE 'a%';
--- #1 question (LIKE SECTION)
+-- SELECT COUNT(a.name) as nr_of_actors, COUNT(m.title) as nr_of_movies
+-- FROM movies as m
+-- JOIN actors as a
+-- ON a.id=m.id;
+-- #1 question
 
--- SELECT *
--- FROM persons
--- WHERE first_name LIKE '%a';
--- #2 question (LIKE SECTION)
+-- SELECT COUNT(title)
+-- FROM movies
+-- WHERE yr=1975;
+-- #2 question
 
--- SELECT *
--- FROM persons
--- WHERE first_name LIKE '%a%';
--- #3 question (LIKE SECTION)
+-- SELECT m.id
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON c.movieid=m.id AND c.actorid=a.id
+-- WHERE a.name=(SELECT name FROM actors WHERE name='Clint Eastwood');
+-- #3 question
 
--- SELECT *
--- FROM persons
--- WHERE LENGTH(first_name)=5;
--- #4 question (LIKE SECTION)
+-- SELECT m.title, m.yr, a.name as actor_name
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON c.movieid=m.id AND c.actorid=a.id
+-- WHERE a.name=(SELECT name FROM actors WHERE name='Clint Eastwood')
+-- ORDER BY yr ASC;
+-- #4 question - HINTS ARE WRONG, 20 ROWS IS THE SOLUTION
 
--- SELECT *
--- FROM persons
--- WHERE street LIKE '%street%';
--- #5 question (LIKE SECTION)
+-- SELECT a.name
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON m.id=c.movieid AND a.id=c.actorid
+-- WHERE m.title='Citizen Kane';
+-- #5 question
 
--- SELECT food
--- FROM likes
--- WHERE food LIKE "% %";
--- #6 LIKE-section question
+-- SELECT DISTINCT a.name
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON m.id=c.movieid AND a.id=c.actorid
+-- WHERE m.title IN ('Vertigo','Rear Window');
+-- #6 question
 
--- SELECT food
--- FROM likes
--- WHERE food like '%te%';
--- #7 question (LIKE SECTION)
+-- SELECT DISTINCT m.title
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON m.id=c.movieid AND a.id=c.actorid
+-- WHERE m.director='28';
+-- #7 question
 
--- SELECT *
--- FROM persons as p1
--- JOIN likes as l1;
--- #1 question (JOIN SECTION)
+-- SELECT DISTINCT m.title
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON m.id=c.movieid AND a.id=c.actorid
+-- WHERE m.director=(SELECT director FROM movies WHERE title='Godfather, The');
+-- #8 question
 
--- SELECT *
--- FROM persons as p1
--- JOIN likes as l1
--- ON l1.person_id=p1.person_id
--- #2 question (JOIN SECTION)
+-- #9 #10 #11 substrings TO-DO
 
--- SELECT food
--- FROM likes
--- WHERE person_id=(
---     SELECT person_id
---     FROM persons
---     WHERE first_name='Aoife' AND last_name='Ahern'
---     )
--- #3 question solved with SUBQUERY (JOIN SECTION)
+-- SELECT m1.title, m2.title, m1. director, m2.director
+-- FROM movies as m1
+-- JOIN movies as m2
+-- WHERE m1.director=m2.director AND (m1.title<m2.title) AND (
+--     (m1.score>8 AND m2.score<3) OR (m1.score<3 AND m2.score>8));
+-- #12 question
 
--- SELECT food
--- FROM likes as l
--- JOIN persons as p
--- ON l.person_id=p.person_id
--- WHERE p.first_name='Aoife' AND p.last_name='Ahern';
--- #3 question solved with JOIN (JOIN SECTION)
+-- SELECT m.title, m.yr
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON c.movieid=m.id AND c.actorid=a.id
+-- WHERE c.actorid IN
+--       (SELECT id FROM actors WHERE name IN ('Clint Eastwood'))
+-- INTERSECT
+-- SELECT m.title, m.yr
+-- FROM movies as m
+--          JOIN actors as a
+--          JOIN castings as c
+--               ON c.movieid=m.id AND c.actorid=a.id
+-- WHERE c.actorid IN
+--       (SELECT id FROM actors WHERE name IN ('Richard Burton'));
+-- #13 question
 
--- SELECT p.first_name,l.food
--- FROM likes as l
--- JOIN persons as p
--- ON l.person_id=p.person_id
--- WHERE p.county='Cork';
--- #4 question (JOIN SECTION)
+-- SELECT DISTINCT a.name
+-- FROM actors as a
+-- JOIN movies as m
+-- JOIN castings as c
+-- ON c.actorid=a.id AND c.movieid=m.id
+-- WHERE c.movieid IN (SELECT movieid FROM castings WHERE actorid=(
+--     SELECT id FROM actors WHERE name='Al Pacino'
+--     ));
+-- #14 question
 
--- SELECT DISTINCT l.food
--- FROM likes as l
--- JOIN persons as p
--- ON l.person_id=p.person_id
--- WHERE p.gender='F';
--- #5 question (JOIN SECTION)
+-- SELECT a.name
+-- FROM actors AS a
+--          JOIN castings AS c ON a.id = c.actorid
+--          JOIN movies AS m ON c.movieid = m.id
+-- WHERE m.title = 'Big Sleep, The'
+--
+-- INTERSECT
+--
+-- SELECT a.name
+-- FROM actors AS a
+--          JOIN castings AS c ON a.id = c.actorid
+--          JOIN movies AS m ON c.movieid = m.id
+-- WHERE m.title = 'Casablanca';
+-- #15 question
 
--- SELECT p.first_name
--- FROM likes as l
--- JOIN persons as p
--- ON l.person_id=p.person_id
--- WHERE l.food='Pizza';
--- #6 question (JOIN SECTION)
+-- SELECT a.name
+-- FROM actors as a
+-- JOIN movies as m
+-- JOIN castings as c
+-- ON c.movieid=m.id AND a.id=c.actorid
+-- WHERE m.yr>1949 AND m.yr<1960
+-- INTERSECT
+-- SELECT a.name
+-- FROM actors as a
+-- JOIN movies as m
+-- JOIN castings as c
+-- ON c.movieid=m.id AND a.id=c.actorid
+-- WHERE m.yr>1979 AND m.yr<1990
+-- #16 question
 
--- SELECT DISTINCT p.town
--- FROM likes as l
--- JOIN persons as p
--- ON l.person_id=p.person_id
--- WHERE l.food='Beer';
--- #7 question (JOIN SECTION)
-
--- SELECT *
--- FROM likes as l1
--- JOIN likes as l2;
--- #8 question (JOIN SECTION)
-
--- SELECT *
--- FROM likes as l1
--- JOIN likes as l2
--- ON l1.person_id=l2.person_id AND l1.food>l2.food;
--- #9 question (JOIN SECTION) (DIFFICULT,
--- you must remove X X = X X duplicates and X Y = Y X duplicates)
-
--- SELECT p.person_id
--- FROM persons as p
--- JOIN likes as l1 ON p.person_id=l1.person_id
--- JOIN likes as l2 ON p.person_id=l2.person_id
--- WHERE l1.food='Pizza' AND l2.food='Nutella';
--- #10 question (JOIN SECTION)
-
--- SELECT DISTINCT p.person_id
--- FROM persons as p
--- JOIN likes as l1 on p.person_id=l1.person_id
--- JOIN likes as l2 on p.person_id=l2.person_id
--- WHERE l1.food='Pizza' OR l2.food='Nutella';
--- #11 question (JOIN SECTION)
-
--- SELECT DISTINCT p.person_id, p.first_name, p.last_name
--- FROM persons as p
--- JOIN likes as l1 on p.person_id=l1.person_id
--- WHERE (p.town='Cork' OR p.county='Cork') AND l1.food='Beer';
--- #12 question (JOIN SECTION)
-
--- SELECT p.first_name, p.last_name
--- FROM persons as p
--- JOIN likes as l1 ON p.person_id=l1.person_id
--- JOIN likes as l2 ON p.person_id=l2.person_id
--- WHERE l1.food='Pizza' AND l2.food='Nutella';
--- #13 question (JOIN SECTION)
-
--- SELECT DISTINCT p.first_name, p.last_name
--- FROM persons as p
--- JOIN likes as l1 ON p.person_id=l1.person_id
--- JOIN likes as l2 ON p.person_id=l2.person_id
--- WHERE l1.food='Pizza' OR l2.food='Nutella';
--- #14 question (JOIN SECTION)
-
--- SELECT *
--- FROM persons as p1
--- JOIN persons as p2;
--- #15 question (JOIN SECTION)
-
--- SELECT *
--- FROM persons as p1
--- JOIN persons as p2
--- WHERE p1.person_id<p2.person_id;
--- #16 question (JOIN SECTION)
-
--- SELECT p1.first_name,p2.first_name
--- FROM persons as p1
--- JOIN persons as p2
--- WHERE p1.birth_date=p2.birth_date AND p1.person_id<p2.person_id;
+-- SELECT  m.yr,COUNT(DISTINCT m.title), MIN(m.title), MAX(m.title)
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON a.id=c.actorid AND c.movieid=m.id
+-- WHERE m.yr>1959 AND m.yr<1970
+-- GROUP BY m.yr
+-- ORDER BY m.yr DESC
 -- #17 question
 
--- #18 question TO-DO
 
--- SELECT l.food,COUNT(l.food)
--- FROM persons AS p
--- JOIN likes as l
--- ON p.person_id=l.person_id
--- GROUP BY l.food;
--- #19 question
 
--- SELECT DISTINCT p.first_name,p.last_name
--- FROM persons as p
--- JOIN likes as l
--- ON p.person_id=l.person_id
--- EXCEPT
--- SELECT p.first_name,p.last_name
--- FROM persons as p
--- JOIN likes as l
--- ON p.person_id=l.person_id
--- WHERE l.food='Beer';
--- #20 question - THE HINT IS WRONG, THERE IS ONLY 4 ROWS I CHECKED BY HAND
+
+
+
+
+
+
+
 
 
 
