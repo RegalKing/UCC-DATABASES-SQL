@@ -88,7 +88,14 @@
 -- WHERE region IN (SELECT region FROM countries WHERE name='Spain') AND area>(SELECT area FROM countries WHERE name='Spain');
 -- #17 question
 
--- #18 to-do
+-- SELECT c.name, c.region
+-- FROM countries c
+-- WHERE c.area>=0.1*(
+--     SELECT SUM(area)
+--     FROM countries
+--     WHERE region = c.region
+-- );
+-- #18 question
 
 -- SELECT COUNT(*)
 -- FROM countries
