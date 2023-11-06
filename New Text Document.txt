@@ -1,0 +1,63 @@
+persons(person_id, first_name, last_name, gender,
+birth_date, street, town, county)
+likes(person_id, food)
+knows(person_id, friend_id)
+
+SELECT first_name, last_name
+FROM persons
+WHERE first_name LIKE '%r%' OR last_name LIKE '%r%'; 1/1
+
+SELECT DISTINCT p.county, COUNT(*)
+FROM persons as p
+GROUP BY p.county
+ORDER BY p.county ASC; 1/1
+
+SELECT DISTINCT p.first_name, p.last_name
+FROM persons as p
+JOIN likes as l
+ON l.id=p.id
+WHERE l.food LIKE '%e%'; 1/1
+
+SELECT p2.first_name, p2.last_name
+FROM persons as p1 
+JOIN knows as k
+JOIN persons as p2
+ON p1.person_id = k.person_id AND p2.person_id = k.friend_id
+WHERE p1.first_name='Aoife' AND p1.last_name='Ahern'; 0/1
+
+SELECT p.first_name, p.last_name
+FROM persons as p
+EXCEPT
+(people who know Aoife); 1/1
+
+(people who know the first one)
+INTERSECT
+(people who know hte 2nd one); 1/1
+
+0/1
+
+persons(person_id, first_name, last_name, gender,
+birth_date, street, town, county)
+likes(person_id, food)
+knows(person_id, friend_id)
+
+SELECT l.food, COUNT(*)
+FROM likes as l
+JOIN persons as p
+ON l.person_id=p.person_id
+WHERE county = 'Cork'
+GROUP BY l.food
+ORDER BY COUNT(*) DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+

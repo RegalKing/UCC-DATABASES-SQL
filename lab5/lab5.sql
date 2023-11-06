@@ -134,6 +134,19 @@
 -- ORDER BY m.yr DESC
 -- #17 question
 
+-- SELECT a1.name, a2.name, COUNT(*)
+-- FROM actors as a1
+-- JOIN actors as a2
+-- JOIN castings as c1
+-- JOIN castings as c2
+-- ON a1.id=c1.actorid AND a2.id=c2.actorid AND a1.id<a2.id AND c1.movieid=c2.movieid
+-- GROUP BY a1.name, a2.name
+-- HAVING COUNT(*)>10
+-- ORDER BY COUNT(*) DESC;
+-- #18 question
+
+
+
 
 
 
