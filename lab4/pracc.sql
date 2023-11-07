@@ -1,7 +1,4 @@
-SELECT p.county, COUNT(*)
+SELECT p.first_name, p.last_name, p.birth_date
 FROM persons as p
-JOIN likes as l
-ON p.person_id=l.person_id
-WHERE l.food='Beer'
-GROUP BY county
-ORDER BY COUNT(*) DESC;
+ORDER BY p.birth_date DESC
+LIMIT 1;
