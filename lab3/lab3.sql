@@ -60,7 +60,10 @@
 -- GROUP BY region;
 -- #11 question
 
--- #12 to-do
+-- SELECT SUBSTR(name, 1, 1),COUNT(*), MIN(name), MAX(name)
+-- FROM countries
+-- GROUP BY SUBSTR(name, 1, 1)
+-- #12
 
 -- SELECT name, region, population
 -- FROM countries

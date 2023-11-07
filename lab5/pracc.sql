@@ -1,4 +1,4 @@
-SELECT a.name
-FROM actors as a
-JOIN movies as m
-JOIN castings as c
+SELECT name
+FROM countries
+ORDER BY population DESC
+LIMIT 1;
