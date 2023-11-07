@@ -1,7 +1,10 @@
--- SELECT COUNT(a.name) as nr_of_actors, COUNT(m.title) as nr_of_movies
--- FROM movies as m
--- JOIN actors as a
--- ON a.id=m.id;
+-- SELECT COUNT(DISTINCT id) AS movie_count
+-- FROM movies;
+-- 1845 MOVIES
+
+-- SELECT COUNT(DISTINCT id) AS actor_count
+-- FROM actors;
+-- 5945 ACTORS, HINTS LIST DOESNT SAY THIS
 -- #1 question
 
 -- SELECT COUNT(title)
@@ -42,6 +45,21 @@
 -- WHERE m.title IN ('Vertigo','Rear Window');
 -- #6 question
 
+-- SELECT a.name
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON m.id=c.movieid AND c.actorid=a.id
+-- WHERE c.movieid IN (SELECT id FROM movies WHERE title='Vertigo')
+-- UNION
+-- SELECT a.name
+-- FROM movies as m
+-- JOIN actors as a
+-- JOIN castings as c
+-- ON m.id=c.movieid AND c.actorid=a.id
+-- WHERE c.movieid IN (SELECT id FROM movies WHERE title='Rear Window')
+-- #6 question solved differently
+
 -- SELECT DISTINCT m.title
 -- FROM movies as m
 -- JOIN actors as a
@@ -58,7 +76,26 @@
 -- WHERE m.director=(SELECT director FROM movies WHERE title='Godfather, The');
 -- #8 question
 
--- #9 #10 #11 substrings TO-DO
+-- SELECT m1.title, m1.yr, m2.yr
+-- FROM movies as m1
+-- JOIN movies as m2
+-- ON m1.title=m2.title AND m1.id<m2.id AND m1.yr<>m2.yr
+-- #9 question
+
+-- SELECT DISTINCT m.title
+-- FROM movies m
+-- WHERE m.title LIKE '% II'
+-- OR m.title LIKE '% III'
+-- OR m.title LIKE '% IV'
+-- OR m.title LIKE '% V'
+-- ORDER BY m.title;
+-- #10 question
+
+-- SELECT m1.title,m2.title
+-- FROM movies m1
+-- JOIN movies as m2
+-- WHERE m1.title LIKE m2.title||' II'
+-- #11 question 11 ROWS, HINTS IS WRONG
 
 -- SELECT m1.title, m2.title, m1. director, m2.director
 -- FROM movies as m1
