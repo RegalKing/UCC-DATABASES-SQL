@@ -266,13 +266,13 @@
 -- GROUP BY p.county, l.food
 -- #23 question (JOIN SECTION)
 
--- SELECT p.county, COUNT(DISTINCT p.person_id)
+-- SELECT p.county, COUNT(*)
 -- FROM persons as p
 -- JOIN likes as l
 -- ON p.person_id=l.person_id
 -- WHERE l.food='Beer'
--- GROUP BY p.county
--- ORDER BY COUNT(DISTINCT p.person_id) DESC;
+-- GROUP BY county
+-- ORDER BY COUNT(*) DESC;
 -- #24 question (JOIN SECTION)
 
 -- SELECT p.first_name, p.last_name, birth_date
