@@ -95,7 +95,7 @@
 -- FROM movies m1
 -- JOIN movies as m2
 -- WHERE m1.title LIKE m2.title||' II'
--- #11 question 11 ROWS, HINTS IS WRONG
+-- #11 question 11 ROWS, HINTS IS WRO
 
 -- SELECT m1.title, m2.title, m1. director, m2.director
 -- FROM movies as m1
