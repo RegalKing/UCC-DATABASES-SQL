@@ -51,10 +51,41 @@ appear only once however often it features in the table.
 decreasing order by first name; label the columns of the result using Surname (for last
 name), Given Name(s) (for other name(s)) and CAO Points (for points).
  ```sh
- Control Constructs II - Week 2 
+SQL SELECT,FROM,WHERE - Week 2 [L.E.] [A = normal queries & LIKE functionality] [B = data manipulation queries]
  ```
-- [x] Pythagorean Threes
-- [x] Optimal Guessing
+- [x] A1. List the names of all the countries in Europe in decreasing order of population.
+- [x] A2. List all various regions alpabetically. Each region should appear once in result.
+- [x] A3. List the names of all the countries, alpahetically by region and within each region by
+country names i.e. all the African countries first in order from Angola to Zimbabwe,
+then the Americas and so on.
+- [x] A4. List the names of all countries whose GDP is listed as NULL.
+- [x] A5. List the names of all countries whose region contains the word ’Asia’.
+- [x] A6. List the names of all countries whose name contains the ’South’ or ’North’.
+- [x] A7. List the names of all countries whose names ends with ’stan’.
+- [x] A8. List the names of all countries whose names contains one or more of the letters ‘x’, ‘y’,
+’z’.
+- [x] A9. List the names of all countries whose per capita GDP is at least 25000. The per capita
+GDP is obtained by dividing the GDP by the population. Ignore countries wiht NULL
+gdp.
+- [x] B10. Modify Aoife’s points to add 50 points.
+- [x] B11. Modify Fionn’s date of birth and hometown to be first of the millennium and Tahiti,
+respectively.
+- [x] B12. Add in a new row for a student named Grianne Goggin. Invent suitable values for the
+various fields.
+- [x] B13. Add a new row for a student named Hugh Hegarty. Populate the row initally with only
+the id number, first and last names.
+- [x] B14. Complete the Hugh Hegarty row by providing values for the remaining columns.
+- [x] B15. Add in four new rows/students in a single command. Invent appropriate names, homwt-
+wons etc. but give then all points values below 300.
+- [x] B16. Delete all the rows with less than 300 points.
+- [x] B17. Trying to insert a new row with an id number that is the same as one of the existing
+rows.
+- [x] B18. Try to insert a new row that is identical to an existing row except with a different id
+number.
+- [x] B19. Experiment with SQLite’s save and restore capabilities: (a) Execute the .save main backupdb.sqlite
+to store a snapshot of the database in file .backupdb.sqlite; (b) Make a change to the database
+e.g. seleting Aoife’s row; (c) Execute the .restore main backupdb.sqlite to restore the
+database to its original state from the snapshot; (d) Verify that Aoife’s row has been re-instated.
  ```sh
  Functions - Week 3
  ```
