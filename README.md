@@ -8,10 +8,11 @@ All the code is in SQL using the SQLite database system.
 Every program can be run by installing the SQLite Visual Studio Code extension and then right-clicking on the SQL query and clicking "Run Query". Make sure you connect the database file (.sqlite) to the SQL file (.sql) before attempting to run the query.
 
 <!-- GETTING STARTED -->
-## Introduction to Relational Databases - Progress tracker
+# Introduction to Relational Databases - Progress tracker
 
+## Week 1
 ```sh
-SQL Basics - Week 1 [L.E.] 
+SQL Basics 
 ```
 <hr><ins>The database structure:</ins><br>
 <b>Table name:</b> students<br>
@@ -51,14 +52,19 @@ appear only once however often it features in the table.
 - [x] 26. List names and points of all students with at least 450 points; arrange the result in
 decreasing order by first name; label the columns of the result using Surname (for last
 name), Given Name(s) (for other name(s)) and CAO Points (for points).
+## Week 2
  ```sh
-SQL SELECT,FROM,WHERE - Week 2 [L.E.] [A = normal queries & LIKE functionality] [B = data manipulation queries]
+SQL SELECT-FROM-WHERE [A = normal queries & LIKE functionality] [B = data manipulation queries]
  ```
-<hr><ins>The database structure:</ins><br>
+<hr>
+<ins>The database structure:</ins><br>
 <b>Table name:</b> countries<br>
-<b>Columns:</b> <ins><b>name</b></ins> | region | area | gdp | population<hr>
+<b>Columns:</b> <ins><b>name</b></ins> | region | area | gdp | population
+<hr>
+
 Complete the following SQL queries
 <hr>
+
 - [x] A1. List the names of all the countries in Europe in decreasing order of population.
 - [x] A2. List all various regions alpabetically. Each region should appear once in result.
 - [x] A3. List the names of all the countries, alpahetically by region and within each region by
@@ -92,14 +98,23 @@ number.
 to store a snapshot of the database in file .backupdb.sqlite; (b) Make a change to the database
 e.g. seleting Aoife’s row; (c) Execute the .restore main backupdb.sqlite to restore the
 database to its original state from the snapshot; (d) Verify that Aoife’s row has been re-instated.
+## Week 3
  ```sh
-SQL Grouping And Aggregation - Week 3
+SQL Grouping And Aggregation
  ```
-<hr><ins>The database structure:</ins><br>
+
+* * *
+
+<ins>The database structure:</ins><br>
 <b>Table name:</b> countries<br>
-<b>Columns:</b> <ins><b>name</b></ins> | region | area | gdp | population<hr>
+<b>Columns:</b> <ins><b>name</b></ins> | region | area | gdp | population
+
+* * *
+
 Complete the following SQL queries
-<hr>
+
+* * *
+
 - [x] 1. What is the greatest area of any country?
 - [x] 2. What is the largest population of any country in Africa?
 - [x] 3. What is the total GDP of Europe?
@@ -142,8 +157,9 @@ SELECT name, MAX(population), MAX(area), MAX(dgp)
 FROM countries;
 - [x] 22. List all the countries whose per capita GDP is at least as great as China’s. The list should
 appear in descending order order of per capita GDP.
+## Week 4
  ```sh
- SQL Joins - Week 4
+ SQL Joins
  ```
 <hr><ins>The database structure:</ins><br>
 <b>Table name:</b> persons<br>
@@ -194,9 +210,9 @@ cs1106/cs6503 2023-24
 that food.
 - [x] J24. List the number of beer lovers county by county in descending order of popularity.
 - [x] J25. List the name of the youngest person in the database
-
+## Week 5
  ```sh
-SQL Multi-Table Queries - Week 5
+SQL Multi-Table Queries
  ```
 <ins>The database structure:</ins><br><hr>
 <b>Table name:</b> movies<br>
@@ -205,88 +221,83 @@ SQL Multi-Table Queries - Week 5
 <b>Columns:</b> <ins><b>id</b></ins> | name <br>
 <b>Table name:</b> castings <br>
 <b>Columns:</b> <ins><b>movieid</b></ins> | <ins><b>actorid</b></ins><hr>
+Complete the following SQL queries
+<hr>
 
-- [x] Function Sum
-- [x] Function IndexAndPointer
-- [x] Function FrequencyOfLetters
-
- ```sh
- Arrays, Pointers, Sequences II - Week 6
- ```
-- [x] Function NumberOfCharacters
-- [x] Function CopyStringUntilCharacter
-- [x] Function StringSegmentation
-
- ```sh
- Recursion I - Week 7
- ```
-- [x] Number of Possible Recursive Combinations [With explanation in comments of the code] 
-- [[Additional video explanation of solution at 11:09]](https://www.youtube.com/watch?v=ngCos392W4w)
-- [x] List of Possible Recursive Combinations [Logic is explained in the comments of the task above]
-- [Hanoi Towers - Explanation Video](https://www.youtube.com/watch?v=YstLjLCGmgg)
-- [Steps to solve any recursive problem [21 min]](https://www.youtube.com/watch?v=ngCos392W4w)
-- [Recursion Explanation #1 [5 min]](https://www.youtube.com/watch?v=ivl5-snqul8)
-- [Recursion Explanation #2 [Full Course] [2 hr]](https://www.youtube.com/watch?v=IJDJ0kBx2LM)
-- [Recursion Explanation #3 [C] [10 videos]](https://www.youtube.com/watch?v=kepBmgvWNDw&list=PLBlnK6fEyqRjTO_UNGKuaaoxEqvSF0t5h)
-
-
- ```sh
- Recursion II - Week 8
- ```
-- [x] Maximum price of N unique items of C price in V space (Knapsack problem)
-- [Knapsack using Recursion - Explanation Video [19 min]](https://www.youtube.com/watch?v=mGfK-j9gAQA&t=0s)
-- [Knapsack using Two Methods - Explanation Video [Abdul Bari] [29 min]](https://www.youtube.com/watch?v=nLmhmB6NzcM)
-- [x] Knapsack with max K items with odd volume
+- [x] 1. Determine how many films and how many actors are represented in the DB.
+- [x] 2. Determine how many films were released in 1975?
+- [x] 3. List the ids of all films in which Clint Eastwood appears.
+- [x] 4. List the names and years of all films in which Clint Eastwood appears. Order the films
+chronologically.
+- [x] 5. List all the actors who appeared in “Citizen Kane”.
+- [x] 6. List all the actors who appeared in either “Vertigo” or “Rear Window”.
+- [x] 7. List all the films made by the director with id number 28.
+- [x] 8. List all the films made by the director of “Godfather, The”.
+- [x] 9. List all remakes, i.e. pairs of films with the same name; give the name and the year in
+each case.
+- [x] 10. List the names all obvious sequels with names like “Superman II”( Consider only the
+first four sequels i.e. II to V).
+- [x] 11. List all film-sequel pairs where the sequel has the same name of the original with the
+Roman numeral II appended. (Hint: SQLite uses the concatenation operator || to join
+strings together, so "Superman" || " II" = "Superman II".)
+- [x] 12. List all pairs of films by the same director where one film received a good score (> 8)
+and another a poor score (< 3).
+- [x] 13. List all the films in which both Clint Eastwood and Richard Burton appeared.
+- [x] 14. List all the actors who have appeared in a film with Al Pacino.
+- [x] 15. List all the actors who appeared in both “Big Sleep, The” and “Casablanca”.
+- [x] 16. List all the actors who made a film during the 1950s and also in the 1980s.
+- [x] 17. For each year during the 1960s, list the number of films made, and the first and last
+(alphabetically by title).
+- [x] 18. List all the actors who appeared in a least ten films and the names of his/her films.
 
  ```sh
- Recursion III - Week 9
+ Subqueries - Week 6
  ```
-- [x] All Possible Lexicographical Strings of [1,N] length between two characters
-- [x] Partitions of a set
+<ins>The database structure:</ins><br><hr>
+<b>Table name:</b> movies<br>
+<b>Columns:</b> <ins><b>id</b></ins> | title | yr | score | votes | director <br>
+<b>Table name:</b> actors<br>
+<b>Columns:</b> <ins><b>id</b></ins> | name <br>
+<b>Table name:</b> castings <br>
+<b>Columns:</b> <ins><b>movieid</b></ins> | <ins><b>actorid</b></ins><hr>
+Complete the following SQL queries
+<hr>
+All queries marked with S should be solved mostly-if-not-exclusively using subqueries!
+<hr>
 
- ```sh
- Structures - Week 10
- ```
-- [x] Function findStudent 
-- [x] Function findIfStudentHasSubject
-- [x] Function Enrichen
+- [x] S1. List the ids of all actors who appeared in “Big Sleep, The”.
+- [x] S2. List chronologically the names of the films made by the director of “Citizen Kane”
+- [x] S3. List the names of all actors who appeared in “Big Sleep, The”.
+- [x] S4. List the ids of all films that were either made in the 1950s or had Elizabeth Taylor in
+them.
+- [x] S5. List the name and scores of the film(s) with the best score.
+- [x] S6. List the ids the actors with at at least 10 films to their credit.
+- [x] S7. List the names of the actors with at at least 10 films to their credit.
+- [x] S8. List the name and scores of the film(s) with scores within 10% of the the best score.
+- [x] S9. List the names of all the actors that appeared in the most terrible films (those with
+scores below 3.0).
+- [x] S10. List the names and scores of the films with the best and the worst scores.
+- [x] S11. List the years and films made before the first film made by the director of ’Citizen
+- [x] SKane’.
+- [x] S12. List the years and films made after the first film made by the director of ’Citizen Kane’.
+- [x] S13. List all the films with a score at least as good as the best film made in the 1940s.
+- [x] S14. What is the greatest number of films made by any director?
+- [x] S15. List the director id and the number of films of the director with the greatest number of
+films
+- [x] S16. List, in chronological order, all the films by the director with the greatest number of
+films.
+- [x] S17. List all the films starring Diane Keaton made by the director of “Bananas”.
 
- ```sh
- Linked Lists - Week 11
- ```
-- [x] Iterative implementation of function SumOfLinkedList function
-- [x] Recursive implementation of function SumOfLinkedList function
-- [x] Iterative implementation of InsertElementInAscendingSortedLinkedList function
-- [x] Recursive implementation of InsertElementInAscendingSortedLinkedList function
-
- ```sh
- Text Files - Week 12
- ```
-- [x] Copy longest line from a file to a new file containing only said line
-- [x] Merge N number of files with an ascending list of numbers into one single file with all the numbers together in ascending order 
-
- ```sh
- Binary Files - Week 13
- ```
-- [x] Color of a dot
-- [x] Transformation into grays
-
-<!-- The C Language - Progress roadmap -->
+<!--- Progress roadmap -->
 ## Roadmap
 
-- [x] Control Constructs I - Week 1 
-- [x] Control Constructs II - Week 2 
-- [x] Functions - Week 3
-- [x] Arrays - Week 4
-- [x] Arrays, Pointers, Sequences I - Week 5
-- [x] Arrays, Pointers, Sequences II - Week 6
-- [x] Recursion I - Week 7
-- [x] Recursion II - Week 8
-- [x] Recursion III - Week 9
-- [x] Structures - Week 10
-- [x] Linked Lists - Week 11
-- [x] Text Files - Week 12
-- [x] Binary Files - Week 13
+- [x] SQL Basics - Lab 1 
+- [x] SELECT-FROM-WHERE - Lab 2 
+- [x] Grouping and aggregation - Lab 4
+- [x] Joins - Week 4
+- [x] Multi-table queries - Week 5
+- [ ] Subqueries - Week 6
+
 <!-- The C Language - Progress roadmap -->
 ## Past Years Exams & Midterms
  ```sh
