@@ -1,0 +1,145 @@
+-- SELECT name, population
+-- FROM cities
+-- ORDER BY population DESC
+-- LIMIT 20;
+-- #1 question
+
+-- SELECT co.name, COUNT(*)
+-- FROM countries as co
+-- JOIN cities as ci
+-- ON co.code = ci.country_code
+-- WHERE ci.population>1000000
+-- GROUP BY co.code
+-- HAVING COUNT(*)>5
+-- ORDER BY COUNT(*) DESC;
+-- #2 question
+
+-- SELECT name, indep_year
+-- FROM countries
+-- WHERE indep_year>=(SELECT indep_year
+-- FROM countries WHERE name='India');
+-- #3 question
+
+-- SELECT cl.language, COUNT(*)
+-- FROM countries as co
+-- JOIN country_languages as cl
+-- ON co.code=cl.country_code
+-- WHERE cl.percentage>=25
+-- GROUP BY cl.language
+-- HAVING COUNT(*)>=6
+-- #4 question
+
+-- SELECT name
+-- FROM countries
+-- WHERE (gnp/population) IS NOT NULL
+-- ORDER BY (gnp/population) ASC
+-- LIMIT 20
+-- INTERSECT
+-- SELECT name
+-- FROM countries
+-- WHERE life_expectancy IS NOT NULL
+-- ORDER BY life_expectancy ASC
+-- LIMIT 20;
+--
+-- #5 question
+-- ^ This code actually does not work as SQLite does not support the use of
+-- ORDER BY and LIMIT clauses between UNION,INTERSECT and other similar combine statements.
+-- However, the solution above WOULD WORK in the two biggest RDBMS (Relational database management systems)
+-- those two RDBMS -> MySQL and PostgreSQL.
+--
+-- Modified code that does work by bypassing the SQLite weakness below:
+-- SELECT name
+-- FROM countries
+-- WHERE name IN
+-- (SELECT name FROM countries
+-- WHERE (gnp/population) IS NOT NULL
+-- ORDER BY (gnp/population) ASC
+-- LIMIT 20)
+-- INTERSECT
+-- SELECT name
+-- FROM countries
+-- WHERE name IN
+-- (SELECT name
+-- FROM countries
+-- WHERE life_expectancy IS NOT NULL
+-- ORDER BY life_expectancy ASC
+-- LIMIT 20);
+
+-- SELECT c1.name, c1.continent, c1.surface_area
+-- FROM countries c1
+-- WHERE c1.surface_area >= 0.1 * (
+--     SELECT SUM(c2.surface_area)
+--     FROM countries c2
+--     WHERE c2.continent = c1.continent
+-- )
+-- #6 question
+
+-- SELECT (richest_20 / total_gnp) * 100 AS richest_20_percentage
+-- FROM (SELECT SUM(gnp) AS total_gnp FROM countries),
+--      (SELECT SUM(gnp) AS richest_20
+--       FROM (SELECT gnp FROM countries ORDER BY gnp DESC LIMIT 20));
+-- #7 question
+
+-- SELECT head_of_state, surface_area
+-- FROM countries
+-- ORDER BY surface_area DESC
+-- LIMIT 1;
+-- #8 question
+
+-- SELECT c1.name, c2.name, c1.continent
+-- FROM countries as c1
+-- JOIN countries as c2
+-- ON c1.continent=c2.continent AND c1.name<c2.name
+--
+-- incomplete!! cant think of a solution to finish this at the moment
+-- #9 question
+
+-- SELECT
+--     c.name AS country_name,
+--     cc.city_name,
+--     cc.city_population,
+--     c.population AS total_population,
+--     (cc.city_population * 100.0 / c.population) AS city_population_percentage
+-- FROM(SELECT country_code,name AS city_name,population AS city_population
+--         FROM cities
+--         WHERE country_code IN (
+--         SELECT code
+--         FROM countries
+--         WHERE continent = 'Europe')) AS cc
+-- JOIN countries AS c ON cc.country_code = c.code
+-- WHERE cc.city_population=(
+-- SELECT MAX(population)
+-- FROM cities
+-- WHERE country_code = cc.country_code)
+-- ORDER BY c.name;
+-- #10 question
+
+-- SELECT name, population
+-- FROM countries
+-- WHERE name IN (
+-- SELECT name
+-- FROM countries as coun
+-- EXCEPT
+-- SELECT name
+-- FROM countries as co
+-- JOIN country_languages as cl
+-- ON co.code=cl.country_code
+-- WHERE language IN ('English','Spanish','Chinese','Arabic','Hindi'))
+-- ORDER BY population DESC;
+--
+-- ^ For this solution I assume significance = someone speaks it,
+-- you can also do the >=0.25 percentage if you want like in Q4,
+-- you can do that by nesting the "WHERE language IN..." clause in
+-- another SELECT query for percentage.
+-- #11 question
+
+-- SELECT cl.language
+-- FROM countries as co
+--         JOIN country_languages as cl
+--         ON co.code=cl.country_code
+-- WHERE cl.percentage >= 25
+-- GROUP BY cl.language
+-- HAVING COUNT(DISTINCT co.continent) >= 2
+-- #12 same assumption as #11, feel free to do the long route for >=0.25 if
+-- you would like to.
+
