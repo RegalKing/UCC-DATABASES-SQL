@@ -290,7 +290,7 @@ films.
 
 ## Week 7
  ```sh
- Difficult multi-nested-queries - Week 7
+ Difficult Complex Queries - Week 7
  ```
 <ins>The database structure:</ins><br><hr>
 <b>Table name:</b> cities<br>
@@ -339,7 +339,8 @@ two continents.
 - [x] Grouping and aggregation - Lab 4
 - [x] Joins - Week 4
 - [x] Multi-table queries - Week 5
-- [ ] Subqueries - Week 6
+- [x] Subqueries - Week 6
+- [x] Difficult Complex Queries - Week 7
 
 <!-- The C Language - Progress roadmap -->
 ## Past Years Exams & Midterms
