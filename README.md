@@ -1,7 +1,7 @@
 # UCC-DATABASES-SQL
 This repository is related to the "Introduction to Relational Databases - CS1106" course at [University College Cork in Cork, Ireland.](https://www.ucc.ie/en)
 
-Professor [Kieran Herley](https://www.ucc.ie/en/compsci/people/herleydrkieran/)
+Professor [Dr. Kieran Herley](https://www.ucc.ie/en/compsci/people/herleydrkieran/)
 
 All the code is in SQL using the SQLite database system.
 
