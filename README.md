@@ -288,6 +288,49 @@ films
 films.
 - [x] S17. List all the films starring Diane Keaton made by the director of “Bananas”.
 
+## Week 7
+ ```sh
+ Difficult multi-nested-queries - Week 7
+ ```
+<ins>The database structure:</ins><br><hr>
+<b>Table name:</b> cities<br>
+<b>Columns:</b> <ins><b>id</b></ins> | name | country_code | district | population<br>
+<b>Table name:</b> countries<br>
+<b>Columns:</b> <ins><b>code</b></ins> | name | continent | region | surface_area | indep_year |
+population | life_expectancy | gnp | gnp_old | local_name | government_form |
+head_of_state | capital | code2 <br>
+<b>Table name:</b> country_languages <br>
+<b>Columns:</b> <ins><b>country_code</b></ins> | <ins><b>language</b></ins> | is_official | percentage <hr>
+Complete the following SQL queries
+<hr>
+
+- [x] 1. List the twenty most populous cities in the world. (MySQL’s LIMIT feature may prove
+handy here.)
+- [x] 2. List the countries that have at least five cities with a population of one million or more.
+List the country’s name and the number of such cities.
+- [x] 3. List all the countries which achieve independence since India did.
+- [x] 4. List those language that are spoken by a significant proportion of the population of at
+least six countries. (We take 25% or more to be “significant”.)
+- [x] 5. List the names of all countries that are both among the twenty poorest (lowest GNP
+per capita) and among the twenty with the lowest life expectancy. Note: take care to
+filter out countries whose life expectancy, population or GNP is unknown.
+- [x] 6. List all the countries that comprise a ”significant” portion (at least 10% ) of the total
+surface area of the continent to which they belong. As a warm up, first do this for
+a specific continent (say South America). You may find the notion of a correlated
+subquery useful here (look it up).
+- [x] 7. Calculate what proportion of the world’s total GNP is belongs to the 20 richest (by
+GNP) countries.
+- [x] 8. Determine the head of state with the greatest amount of territory (by surface area).
+- [ ] 9. List for each continent, the name of the country with the greatest and smallest popula-
+tion.
+- [x] 10. For each country in Europe list the percentage of its population that live in its most
+populous city.
+- [x] 11. List in descending order of population all countries in which none of the following
+languages are spoken by a significant proportion of the population: English, Spanish,
+Chinese, Arabic or Hindi
+- [x] 12. List all the languages that are spoken by a majority of people in countries in at least
+two continents.
+
 <!--- Progress roadmap -->
 ## Roadmap
 
