@@ -345,6 +345,6 @@ two continents.
 - [ ] New database - Week 9
 
 ## Goal
-- [ ] Pass the midterm (Grade: 100%)
+- [x] Pass the midterm (Grade: 100%)
 - [ ] Pass the subject (Grade: )
 
