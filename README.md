@@ -341,6 +341,8 @@ two continents.
 - [x] Multi-table queries - Week 5
 - [x] Subqueries - Week 6
 - [x] Difficult Complex Queries - Week 7
+- [ ] Week 8 had no lab
+- [ ] New database - Week 9
 
 ## Goal
 - [ ] Pass the subject (Grade: )
